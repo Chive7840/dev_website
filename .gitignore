@@ -1,0 +1,2 @@
+# Excludes the local env file
+./src/.env
