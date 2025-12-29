@@ -9,13 +9,14 @@
   },
   "main": "src/main.jsx",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build --turbopack",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "start": "next start",
-    "lint": "eslint src",
+    "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write src",
-    "format:check": "prettier --check src",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "test": "jest",
     "test:watch": "jest --watch",
     "lint-staged": "lint-staged",
@@ -45,8 +46,7 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwind": "^4.0.0",
-    "three": "^0.180.0",
-    "vite": "^7.3.0"
+    "three": "^0.180.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
@@ -73,10 +73,12 @@
     "playwright": "^1.56.1",
     "postcss": "^8.5.6",
     "prettier": "^3.4.2",
+    "sass": "^1.97.1",
     "simple-git-hooks": "^2.11.1",
     "tailwindcss": "^4.1.14",
     "tsx": "^4.20.6",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [

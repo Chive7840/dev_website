@@ -1,0 +1,42 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:meta';
+
+@function strip-unit($value) {
+  @if meta.type-of($value) == 'number' {
+    @return math.div($value, 1px);
+  }
+
+  @return $value;
+}
+
+@function fluid-size($min-size, $max-size, $min-vw: 320px, $max-vw: 1440px) {
+  $min: strip-unit($min-size);
+  $max: strip-unit($max-size);
+  $min-screen: strip-unit($min-vw);
+  $max-screen: strip-unit($max-vw);
+  $slope: math.div($max - $min, $max-screen - $min-screen);
+  $y-axis-intersection: $min - $slope * $min-screen;
+  @return clamp(
+          #{$min-size},
+          #{$y-axis-intersection}px + #{$slope * 100}vw,
+          #{$max-size}
+  );
+}
+
+$font-scale: (
+        'xs': fluid-size(0.75rem, 0.85rem),
+        'sm': fluid-size(0.9rem, 1rem),
+        'md': fluid-size(1rem, 1.125rem),
+        'lg': fluid-size(1.15rem, 1.35rem),
+        'xl': fluid-size(1.4rem, 1.65rem),
+        '2xl': fluid-size(1.8rem, 2.25rem),
+        '3xl': fluid-size(2.4rem, 3rem),
+        '4xl': fluid-size(3rem, 4rem)
+);
+
+@mixin type-scale($key, $weight: 500, $tracking: -0.01em) {
+  font-size: map.get($font-scale, $key);
+  font-weight: $weight;
+  letter-spacing: $tracking;
+}

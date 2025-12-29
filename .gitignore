@@ -28,6 +28,6 @@ node_modules
 next-env.d.ts
 
 # Local dotenv file
-src/.env
+src/.env.local
 
 

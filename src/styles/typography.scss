@@ -1,0 +1,36 @@
+@use './tokens' as *;
+
+body {
+  @include type-scale('md', 400);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+}
+
+.hero__headline {
+  @include type-scale('4xl', 700, -0.02em);
+}
+
+.hero__subhead {
+  @include type-scale('lg', 500, -0.005em);
+  line-height: 1.5;
+}
+
+.eyebrow {
+  @include type-scale('xs', 600, 0.08em);
+  text-transform: uppercase;
+}
+
+.timestamp {
+  @include type-scale('xs', 500, 0.06em);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
