@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { fileUrlToPath } from 'node:url';
+import { fileURLToPath } from 'node:url';
 
 // Vite 7 shared options reference: https://vite.dev/config/shared-options
-const projectRoot = fileUrlToPath(new URL('..', import.meta.url));
+const projectRoot = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
   root: projectRoot,
