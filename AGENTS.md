@@ -1,6 +1,6 @@
 # Repository Agent Guidelines
 
-To conserve resources and respect the user's directive, **avoid creating or keeping any JavaScript/TypeScript lockfiles.** This applies to `package-lock.json`, `npm-shrinkwrap.json`, `yarn.lock`, `pnpm-lock.yaml`, and similar files.
+To conserve resources and respect the user's directive, **avoid recreating any JavaScript/TypeScript lockfiles when generating code file outputs for the user.** This applies to `package-lock.json`, `npm-shrinkwrap.json`, `yarn.lock`, `pnpm-lock.yaml`, and similar files.
 
 ## What to avoid
 
