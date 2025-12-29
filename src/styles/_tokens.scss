@@ -3,8 +3,8 @@
 @use 'sass:meta';
 
 @function strip-unit($value) {
-  @if meta.type-of($value) == 'number' {
-    @return math.div($value, 1px);
+  @if meta.type-of($value) == 'number' and not math.is-unitless($value) {
+    @return math.div($value, $value * 0 + 1);
   }
 
   @return $value;
