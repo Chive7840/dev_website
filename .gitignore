@@ -26,8 +26,3 @@ node_modules
 *.lock
 .eslintcache
 next-env.d.ts
-
-# Local dotenv file
-src/.env.local
-
-
