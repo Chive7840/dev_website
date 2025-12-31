@@ -1,3 +1,5 @@
+/// <reference types="vitest/config" />
+import { reactRouter } from '@react-router/dev/vite';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { fileURLToPath } from 'node:url';
@@ -13,7 +15,8 @@ export default defineConfig({
       babel: {
         plugins: [['babel-plugin-react-compiler']]
       }
-    })
+    }),
+    reactRouter()
   ],
   resolve: {
     alias: {
@@ -29,5 +32,6 @@ export default defineConfig({
   },
   preview: {
     port: 4173
-  }
+  },
+  test: {}
 });
