@@ -37,14 +37,16 @@ dev_website/
 │       └── vanholtz_landing.png
 ├── public/                     # Static Assets
 │   ├── vite.svg
-│   └── react.svg
+│   └──react.svg
 ├── src/
 │   ├── components/             # Reusable Components
 │   ├── constants/              # Constants
 │   ├── hooks/                  # Custom Hooks
 │   ├── pages/                  # Page Components
 │   ├── services/               # API Services
+│   │   └── api.ts
 │   ├── store/                  # State Management
+│   │   └── userStore.ts
 │   ├── styles/                 # Global Styles
 │   │   ├── _tokens.scss
 │   │   ├── global.css
