@@ -3,7 +3,15 @@
 ## Project Overview
 
 This is a modern full-stack website project that uses React 19, TypeScript, SCSS, CSS, Tailwind and Vite.
-It's designed for building a high-performance Multi-Page Application (MPA) with integrated modern development toolchain and best practices.
+It's designed for building a high-performance combination of Multi-Page Applications (MPA) and Single Page Applications
+with integrated modern development toolchain and best practices.
+
+The landing page will be the Multi-Page Application as it will route users to all other parts of the website.
+Each page of the website linked/routed to from the landing page will be an SPA (Single Page Application).
+
+## Project Design Example
+
+This project uses [vanoltz.co](https://vanholtz.co/) as the Multi-Page Application example for the design of this portfolio project.
 
 ## Tech Stack
 
@@ -12,7 +20,7 @@ It's designed for building a high-performance Multi-Page Application (MPA) with 
 - **State Management**: Zustand
 - **Routing**: React Router v7
 - **UI Components**: Material-UI
-- **Styling**: Tailwind CSS / Styled-components
+- **Styling**: Tailwind CSS / Styled-components / SCSS / Design Tokens
 - **HTTP Client**: Axios
 - **Testing Framework**: Vitest + React Testing Library
 - **Code Quality**: ESLint + Prettier
@@ -22,6 +30,11 @@ It's designed for building a high-performance Multi-Page Application (MPA) with 
 ```
 dev_website/
 ├── docs/                       # Project Documentation
+│   └── design/                 # Sample Images from the Project Design Example Website
+│       ├── about_curtain.png
+│       ├── landing_link_highlighted.png
+│       ├── singe_page_application_example.png
+│       └── vanholtz_landing.png
 ├── public/                     # Static Assets
 │   ├── vite.svg
 │   └── react.svg
@@ -163,20 +176,20 @@ export default api;
 
 ### Development Requirements
 
-- Node.js >= 18.0.0
-- npm >= 8.0.0 or yarn >= 1.22.0
+- Node.js >= 19.0.0
+- yarn >= 1.22.0
 
 ### Installation Steps
 
 ```bash
 # 1. Create project
-npm create vite@latest my-react-app -- --template react-ts
+yarn create vite@latest dev_website -- --template react-ts
 
 # 2. Navigate to project directory
 cd my-react-app
 
 # 3. Install dependencies
-npm install
+yarn install
 
 # 4. Install additional dependencies
 npm install zustand react-router-dom axios
@@ -224,7 +237,7 @@ export default App;
 ### Unit Testing Example
 
 ```tsx
-// tests/components/Button.test.tsx
+// Example: tests/components/Button.test.tsx
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Button } from '../src/components/Button';
 
@@ -250,9 +263,10 @@ describe('Button Component', () => {
 
 ## Performance Optimization
 
-### Code Splitting
+### Code Splitting Example
 
 ```tsx
+// Example: Code Splitting
 import { lazy, Suspense } from 'react';
 
 const LazyComponent = lazy(() => import('./LazyComponent'));
@@ -266,9 +280,10 @@ function App() {
 }
 ```
 
-### Memory Optimization
+### Memory Optimization Example
 
 ```tsx
+// Example: Memory Optimization
 import { memo, useMemo, useCallback } from 'react';
 
 const ExpensiveComponent = memo(({ data, onUpdate }) => {
@@ -300,7 +315,7 @@ const ExpensiveComponent = memo(({ data, onUpdate }) => {
 ### Build Production Version
 
 ```bash
-npm run build
+yarn run build
 ```
 
 ### Vite Configuration Optimization
@@ -336,7 +351,7 @@ export default defineConfig({
 **Solution**:
 
 - Check dependency pre-build cache
-- Use `npm run dev -- --force` to force rebuild
+- Use `yarn run dev -- --force` to force rebuild
 - Optimize optimizeDeps configuration in vite.config.ts
 
 ### Issue 2: TypeScript Type Errors
@@ -345,7 +360,7 @@ export default defineConfig({
 
 - Ensure correct type definition packages are installed
 - Check tsconfig.json configuration
-- Use `npm run type-check` for type checking
+- Use `yarn run type-check` for type checking
 
 ## Reference Resources
 
