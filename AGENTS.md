@@ -184,21 +184,15 @@ export default api;
 ### Installation Steps
 
 ```bash
-# 1. Create project
-yarn create vite@latest dev_website -- --template react-ts
-
-# 2. Navigate to project directory
-cd my-react-app
-
-# 3. Install dependencies
+# 1. Install dependencies
 yarn install
 
-# 4. Install additional dependencies
-npm install zustand react-router-dom axios
-npm install -D @types/node
+# 2. Install additional dependencies
+yarn add zustand react-router-dom axios
+yarn add -D @types/node
 
-# 5. Start development server
-npm run dev
+# 3. Start development server
+yarn run dev
 ```
 
 ### Environment Variables Configuration
@@ -206,28 +200,31 @@ npm run dev
 ```env
 # .env.local
 VITE_API_URL=http://localhost:3001/api
-VITE_APP_TITLE=My React App
+VITE_APP_TITLE=dev_website
 VITE_ENABLE_MOCK=false
 ```
 
 ## Routing Configuration
 
-```tsx
-// App.tsx
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HomePage } from './pages/HomePage';
-import { AboutPage } from './pages/AboutPage';
-import { NotFoundPage } from './pages/NotFoundPage';
+```jsx
+// App.jsx
+import '@/src/styles/typography.scss';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="page">
+      <header className="site-header">
+        <span className="eyebrow">Tyler Carter</span>
+        <span className="timestamp">2025</span>
+      </header>
+      <main className="hero">
+        <div className="hero__titles">
+          <div className="hero__topline">Full-stack Developer</div>
+          <div className="hero__headline">AI Integration Expert</div>
+          <div className="hero__subhead">Specializes in development and integration.</div>
+        </div>
+      </main>
+    </div>
   );
 }
 
